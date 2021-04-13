@@ -1,0 +1,73 @@
+INTERLIS 2.3;
+
+/** !!------------------------------------------------------------------------------
+ *  !! Version    | wer | Änderung
+ *  !!------------------------------------------------------------------------------
+ *  !! 2021-04-13 | sz  | Ersterfassung
+ *  !!==============================================================================
+ */
+!!@ technicalContact="mailto:agi@bd.so.ch"
+!!@ furtherInformation="http://geo.so.ch/models/AGI/SO_AGI_Grundbuch_20210413.uml"
+MODEL SO_AGI_Grundbuch_20210413 (de)
+AT "https://agi.so.ch"
+VERSION "2021-04-13"  =
+  IMPORTS GeometryCHLV95_V1,Text;
+
+  TOPIC Grundbuch =
+
+    CLASS Eigentuemer =
+      /** Name
+       */
+      Name : MANDATORY TEXT*200;
+      /** Vorname
+       */
+      Vorname : MANDATORY TEXT*200;
+      /** Geschlecht
+       */
+      Geschlecht : (
+        d,
+        w,
+        m
+      );
+    END Eigentuemer;
+
+    /** Grundstücke
+     */
+    CLASS Grundstueck (ABSTRACT) =
+      /** Eidgenössischer Grundstücksidentifikator
+       */
+      EGRID : MANDATORY TEXT*14;
+      /** Nummer des Grundstückes
+       */
+      Nummer : MANDATORY TEXT*50;
+      /** Gemeindenummer
+       */
+      BFSNr : MANDATORY 0 .. 9999;
+      MANDATORY CONSTRAINT 
+        INTERLIS.len(EGRID) == 14 AND Text.startsWith(EGRID, "CH");
+    END Grundstueck;
+
+    /** Grundstücke vom Typ Baurecht
+     */
+    CLASS Baurecht
+    EXTENDS Grundstueck =
+      Geometrie : MANDATORY GeometryCHLV95_V1.SurfaceWithOverlaps2mm;
+    END Baurecht;
+
+    /** Grundstücke vom Typ Liegenschaft
+     */
+    CLASS Liegenschaft
+    EXTENDS Grundstueck =
+      /** Geometrie
+       */
+      Geometrie : MANDATORY GeometryCHLV95_V1.AreaWithOverlaps2mm;
+    END Liegenschaft;
+
+    ASSOCIATION Grundstueck_Eigentuemer =
+      EigentuemerRef -- {1..*} Eigentuemer;
+      GrundstueckRef -- {0..*} Grundstueck;
+    END Grundstueck_Eigentuemer;
+
+  END Grundbuch;
+
+END SO_AGI_Grundbuch_20210413.
