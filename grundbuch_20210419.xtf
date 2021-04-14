@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TRANSFER xmlns="http://www.interlis.ch/INTERLIS2.3">
+  <HEADERSECTION SENDER="ili2pg-4.4.5-766cda6162476f9d397dcb55508a50698677b918" VERSION="2.3">
+    <MODELS>
+      <MODEL NAME="CoordSys" VERSION="2015-11-24" URI="http://www.interlis.ch/models"/>
+      <MODEL NAME="Text" VERSION="2018-11-19" URI="http://www.interlis.ch/models"/>
+      <MODEL NAME="Units" VERSION="2012-02-20" URI="http://www.interlis.ch/models"/>
+      <MODEL NAME="GeometryCHLV03_V1" VERSION="2017-12-04" URI="http://www.geo.admin.ch"/>
+      <MODEL NAME="GeometryCHLV95_V1" VERSION="2017-12-04" URI="http://www.geo.admin.ch"/>
+      <MODEL NAME="SO_AGI_Grundbuch_20210413" VERSION="2021-04-13" URI="https://agi.so.ch"/>
+    </MODELS>
+  </HEADERSECTION>
+  <DATASECTION>
+    <SO_AGI_Grundbuch_20210413.Grundbuch BID="SO_AGI_Grundbuch_20210413.Grundbuch">
+      <SO_AGI_Grundbuch_20210413.Grundbuch.Eigentuemer TID="3">
+        <Name>Liegenschaft</Name>
+        <Vorname>Lisa</Vorname>
+        <Geschlecht>w</Geschlecht>
+      </SO_AGI_Grundbuch_20210413.Grundbuch.Eigentuemer>
+      <SO_AGI_Grundbuch_20210413.Grundbuch.Eigentuemer TID="4">
+        <Name>Haus</Name>
+        <Vorname>Hans</Vorname>
+        <Geschlecht>m</Geschlecht>
+      </SO_AGI_Grundbuch_20210413.Grundbuch.Eigentuemer>
+      <SO_AGI_Grundbuch_20210413.Grundbuch.Baurecht TID="2">
+        <EGRID>DE210622327695</EGRID>
+        <Nummer>202</Nummer>
+        <BFSNr>2601</BFSNr>
+        <Geometrie>
+          <SURFACE>
+            <BOUNDARY>
+              <POLYLINE>
+                <COORD>
+                  <C1>2607885.275</C1>
+                  <C2>1228219.135</C2>
+                </COORD>
+                <COORD>
+                  <C1>2607892.715</C1>
+                  <C2>1228160.128</C2>
+                </COORD>
+                <COORD>
+                  <C1>2607976.864</C1>
+                  <C2>1228179.370</C2>
+                </COORD>
+                <COORD>
+                  <C1>2607885.275</C1>
+                  <C2>1228219.135</C2>
+                </COORD>
+              </POLYLINE>
+            </BOUNDARY>
+          </SURFACE>
+        </Geometrie>
+      </SO_AGI_Grundbuch_20210413.Grundbuch.Baurecht>
+      <SO_AGI_Grundbuch_20210413.Grundbuch.Liegenschaft TID="1">
+        <EGRID>CH133077127648</EGRID>
+        <Nummer>101</Nummer>
+        <BFSNr>2601</BFSNr>
+        <Geometrie>
+          <SURFACE>
+            <BOUNDARY>
+              <POLYLINE>
+                <COORD>
+                  <C1>2607870.908</C1>
+                  <C2>1228298.409</C2>
+                </COORD>
+                <COORD>
+                  <C1>2607883.223</C1>
+                  <C2>1228235.554</C2>
+                </COORD>
+                <COORD>
+                  <C1>2607955.313</C1>
+                  <C2>1228255.052</C2>
+                </COORD>
+                <COORD>
+                  <C1>2607940.433</C1>
+                  <C2>1228321.242</C2>
+                </COORD>
+                <COORD>
+                  <C1>2607870.908</C1>
+                  <C2>1228298.409</C2>
+                </COORD>
+              </POLYLINE>
+            </BOUNDARY>
+          </SURFACE>
+        </Geometrie>
+      </SO_AGI_Grundbuch_20210413.Grundbuch.Liegenschaft>
+      <SO_AGI_Grundbuch_20210413.Grundbuch.Grundstueck_Eigentuemer>
+        <EigentuemerRef REF="3"/>
+        <GrundstueckRef REF="1"/>
+      </SO_AGI_Grundbuch_20210413.Grundbuch.Grundstueck_Eigentuemer>
+      <SO_AGI_Grundbuch_20210413.Grundbuch.Grundstueck_Eigentuemer>
+        <EigentuemerRef REF="4"/>
+        <GrundstueckRef REF="2"/>
+      </SO_AGI_Grundbuch_20210413.Grundbuch.Grundstueck_Eigentuemer>
+    </SO_AGI_Grundbuch_20210413.Grundbuch>
+  </DATASECTION>
+</TRANSFER>
